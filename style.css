@@ -1,0 +1,95 @@
+.personal{
+	height: 100vh;
+	position: sticky;
+	top: 0;
+	background-color: #135321;
+	width:30%;
+}
+.blog{
+	background-color: #276B36;
+	width:70%;
+	padding:5% 0;
+}
+body{
+	margin: 0;
+	display:flex;
+	font-family: monaco,Consolas,Lucida Console,monospace; 
+}
+.article{
+	margin: 5% 10%;
+	color: #5cbe56;
+}
+.head{
+	width: 100%;
+}
+.title{
+	color: #B5EAB2;
+}
+.inside{
+	color: #B5EAB2;
+	text-decoration:underline;
+
+}
+.personal-description{
+	box-shadow: 0px 0px 20px #14351b;
+	color: #B5EAB2;
+	font-size: 16px;
+	margin: 10%;
+	padding: 3%;
+	text-align: center;
+	background-color: #276B36;
+}
+
+/* Style all font awesome icons */
+.fab {
+	padding: 5px;
+	font-size: 30px;
+	width: 50px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 5%;
+}
+.social{
+	text-align:center;
+}
+
+/* Add a hover effect if you want */
+.fab:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+.fa-facebook {
+  background: white;
+  color: white;
+}
+.fa-stack-overflow {
+  background: grey;
+  color: white;
+}
+.fa-quora {
+  background: #a62100;
+  color: white;
+}
+.fa-linkedin {
+  background: white; 
+  color: #4875B4;
+}
+.fa-github {
+  background: black;
+  color: white;
+}
+.fa-youtube {
+  background: white;
+  color: red;
+}
+.fa-kaggle {
+  background: #373946;
+  color: #21affe;
+}
+.fa-instagram {
+  background: #4E433C;
+  color: white;
+}
+
