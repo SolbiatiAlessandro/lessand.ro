@@ -1,0 +1,18 @@
+atomicwrites==1.3.0
+attrs==18.2.0
+Click==7.0
+coverage==4.5.2
+Flask==1.0.2
+-e git+https://github.com/SolbiatiAlessandro/lessand.ro.git@7cbefa48b43aa732d8af01c9a297d190ec8a90b5#egg=flaskr
+funcsigs==1.0.2
+itsdangerous==1.1.0
+Jinja2==2.10
+MarkupSafe==1.1.0
+more-itertools==5.0.0
+pathlib2==2.3.3
+pluggy==0.8.1
+py==1.7.0
+pytest==4.2.1
+scandir==1.9.0
+six==1.12.0
+Werkzeug==0.14.1
