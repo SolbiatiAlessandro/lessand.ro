@@ -17,7 +17,6 @@ The tests/conftest.py file contains setup functions called fixtures that each te
 @pytest.fixture
 def app():
     db_fd, db_path = tempfile.mkstemp()
-
     app = create_app({
         'TESTING': True,
         'DATABASE': db_path,
@@ -25,7 +24,9 @@ def app():
 
     with app.app_context():
         init_db()
-        get_db().executescript(_data_sql)
+        db, cursor = get_db()
+        cursor.execute(_data_sql)
+        db.commit()
 
     yield app
 
