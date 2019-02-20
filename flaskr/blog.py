@@ -10,12 +10,27 @@ bp = Blueprint('blog', __name__)
 
 @bp.route('/')
 def index():
-    db = get_db()
-    posts = db.execute(
+    db, cursor = get_db()
+    cursor.execute(
         'SELECT p.id, title, body, created, author_id, username'
-        ' FROM post p JOIN user u ON p.author_id = u.id'
+        ' FROM post p JOIN users u ON p.author_id = u.id'
         ' ORDER BY created DESC'
-    ).fetchall()
+    )
+
+    # ISSUE: (coming from sqlite -> psql migration) 
+    # sqlite was returning dictionaries fetched['key'] = 'value'
+    # but psql returns just a list of values, there could some better ways
+    # to fix this but this below is just an ugly work around to fix it
+    keys = ['id', 'title', 'body', 'created', 'author_id', 'username']
+    posts_values  = cursor.fetchall() # this is the list of list of values
+
+    # here I create the list of dicts manually
+    posts = []
+    for post_values in posts_values:
+        post = {keys[i]: post_values[i] for i in xrange(len(keys))}
+        posts.append(post)
+
+    # the dictionary is needed for jinja2 to render template
     return render_template('blog/index.html', posts=posts)
 
 

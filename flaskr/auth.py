@@ -43,11 +43,17 @@ def login():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        db = get_db()
+        db, cursor = get_db()
         error = None
-        user = db.execute(
-            'SELECT * FROM user WHERE username = ?', (username,)
-        ).fetchone()
+        cursor.execute(
+            "SELECT * FROM users WHERE username = '{}'".format(username)
+        )
+
+        # same issue as described in blog.py in line 20
+        cols = ['id', 'username', 'password']
+        vals = cursor.fetchone()
+        if vals: user = {cols[i]: vals[i]  for i in xrange(len(cols)) }
+        else: user = None
 
         if user is None:
             error = 'Incorrect username.'
@@ -71,9 +77,14 @@ def load_logged_in_user():
     if user_id is None:
         g.user = None
     else:
-        g.user = get_db().execute(
-            'SELECT * FROM user WHERE id = ?', (user_id,)
-        ).fetchone()
+        db, cursor = get_db()
+        cursor.execute(
+            "SELECT * FROM users WHERE id = '{}'".format(user_id)
+        )
+        cols = ['id', 'username', 'password']
+        vals = cursor.fetchone()
+        if vals: g.user = {cols[i]: vals[i]  for i in xrange(len(cols)) }
+        else: g.user = None
 
 
 @bp.route('/logout')

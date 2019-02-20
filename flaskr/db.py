@@ -6,7 +6,7 @@ import os
 import psycopg2
 
 # $ heroku pg:pull localdb
-# $ export DATABASE_URL="database='localdb'"
+# $ export DATABASE_URL="dbname='localdb'"
 
 DATABASE_URL = os.environ['DATABASE_URL']
 
