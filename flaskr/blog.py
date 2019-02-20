@@ -28,7 +28,7 @@ def index():
     # here I create the list of dicts manually
     posts = []
     for post_values in posts_values:
-        post = {keys[i]: post_values[i] for i in xrange(len(keys))}
+        post = {keys[i]: post_values[i] for i in range(len(keys))}
         posts.append(post)
 
     # the dictionary is needed for jinja2 to render template
@@ -72,7 +72,7 @@ def get_post(id, check_author=True):
     # this is a copy paste from line 20, should add code reusability
     vals = cursor.fetchone()
     keys = ['id', 'title', 'body', 'created', 'author_id', 'username']
-    if vals: post = {keys[i]: vals[i] for i in xrange(len(keys))}
+    if vals: post = {keys[i]: vals[i] for i in range(len(keys))}
     else: post = None
 
     if post is None:

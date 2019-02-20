@@ -52,7 +52,7 @@ def login():
         # same issue as described in blog.py in line 20
         cols = ['id', 'username', 'password']
         vals = cursor.fetchone()
-        if vals: user = {cols[i]: vals[i]  for i in xrange(len(cols)) }
+        if vals: user = {cols[i]: vals[i]  for i in range(len(cols)) }
         else: user = None
 
         if user is None:
@@ -83,7 +83,7 @@ def load_logged_in_user():
         )
         cols = ['id', 'username', 'password']
         vals = cursor.fetchone()
-        if vals: g.user = {cols[i]: vals[i]  for i in xrange(len(cols)) }
+        if vals: g.user = {cols[i]: vals[i]  for i in range(len(cols)) }
         else: g.user = None
 
 
