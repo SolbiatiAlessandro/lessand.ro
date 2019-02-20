@@ -15,22 +15,21 @@ def register():
         username = request.form['username']
         password = request.form['password']
         db, cursor = get_db()
-        error = None
 
+        error = None
         if not username:
             error = 'Username is required.'
         elif not password:
             error = 'Password is required.'
-        elif cursor.execute(
-            'SELECT id FROM user WHERE username = {}'.format(username)
-        ).fetchone() is not None:
-            error = 'User {} is already registered.'.format(username)
+        else:
+            cursor.execute("SELECT id FROM users WHERE username = '{}';".format(username))
+            if cursor.fetchone() is not None:
+                error = 'User {} is already registered.'.format(username)
 
         if error is None:
             cursor.execute(
-                'INSERT INTO user (username, password) VALUES ({}, {})',
-                (username, generate_password_hash(password))
-            )
+                "INSERT INTO users (username, password) VALUES ('{}', '{}');".format(username, generate_password_hash(password))
+                    )
             db.commit()
             return redirect(url_for('auth.login'))
 
