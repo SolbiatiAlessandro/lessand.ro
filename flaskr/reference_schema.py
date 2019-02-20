@@ -1,3 +1,8 @@
+"""
+the following is a script (commented not to influence test coverage) only to take as a reference on psycopg2 syntax
+
+
+
 import os
 import psycopg2
 DATABASE_URL = os.environ['DATABASE_URL']
@@ -10,8 +15,9 @@ db.execute("INSERT INTO users (username, password) VALUES ({}, {})".format("'tes
 conn.commit()
 
 # this is the syntax to select
-db.execute("SELECT id FROM users WHERE username = '{}';".format(username))}
+db.execute("SELECT id FROM users WHERE username = '{}';".format(username))
 print db.fetchone()
 
 db.close()
 conn.close()
+"""
