@@ -1,8 +1,14 @@
-import sqlite3
-
 import click
 from flask import current_app, g
 from flask.cli import with_appcontext
+
+import os
+import psycopg2
+
+# $ heroku pg:pull localdb
+# $ export DATABASE_URL="database='localdb'"
+
+DATABASE_URL = os.environ['DATABASE_URL']
 
 
 def get_db():
@@ -11,13 +17,10 @@ def get_db():
     again.
     """
     if 'db' not in g:
-        g.db = sqlite3.connect(
-            current_app.config['DATABASE'],
-            detect_types=sqlite3.PARSE_DECLTYPES
-        )
-        g.db.row_factory = sqlite3.Row
+        g.db = psycopg2.connect(DATABASE_URL)
+        g.cursor = g.db.cursor()
 
-    return g.db
+    return g.db, g.cursor
 
 
 def close_db(e=None):
@@ -25,17 +28,21 @@ def close_db(e=None):
     connection.
     """
     db = g.pop('db', None)
+    cursor = g.pop('cursor', None)
 
     if db is not None:
         db.close()
+        cursor.close()
+        
 
 
 def init_db():
     """Clear existing data and create new tables."""
-    db = get_db()
+    db, cursor = get_db()
 
     with current_app.open_resource('schema.sql') as f:
-        db.executescript(f.read().decode('utf8'))
+        cursor.execute(f.read().decode('utf8'))
+        db.commit()
 
 
 @click.command('init-db')
