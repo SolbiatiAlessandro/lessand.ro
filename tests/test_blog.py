@@ -84,6 +84,19 @@ def test_update(client, auth, app):
         assert post['title'] == 'updated'
 
 def test_post(client, auth, app):
+    # test without login
+    with app.app_context():
+        db, cursor = get_db()
+        cursor.execute('SELECT * FROM post;')
+        vals = cursor.fetchone()
+        keys = ['id', 'author_id', 'created', 'title', 'body']
+        if vals: post = {keys[i]: vals[i] for i in xrange(len(keys))}
+
+        response =  client.get('/'+str(post['id'])+'/post')
+        assert response.status_code == 200
+        assert post['title'] in response.data
+
+    # test with login
     auth.login()
     with app.app_context():
         db, cursor = get_db()
