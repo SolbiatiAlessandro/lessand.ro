@@ -83,6 +83,13 @@ def test_update(client, auth, app):
         else: post = None
         assert post['title'] == 'updated'
 
+def test_post(client, auth, app):
+    auth.login()
+    with app.app_context():
+        db, cursor = get_db()
+        cursor.execute('SELECT * FROM post;')
+        post = cursor.fetchone()
+        assert client.get('/'+str(post[0])+'/post').status_code == 200
 
 @pytest.mark.parametrize('path', (
     '/create',

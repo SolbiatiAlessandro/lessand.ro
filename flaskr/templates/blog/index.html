@@ -15,7 +15,7 @@
           <a class="action" href="{{ url_for('blog.update', id=post['id']) }}">Edit</a>
         {% endif %}
 
-    <h4 class="subtitle">{{ post['body'] }}<span class="inside"> read more..</span></h3>
+    <h4 class="subtitle">{{ post['body'] }}<a class="inside action" href="{{ url_for('blog.post', id=post['id']) }}"> read more..</a></h3>
         </div>
     {% if not loop.last %}
       <hr>
