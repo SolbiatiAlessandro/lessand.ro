@@ -88,8 +88,16 @@ def test_post(client, auth, app):
     with app.app_context():
         db, cursor = get_db()
         cursor.execute('SELECT * FROM post;')
-        post = cursor.fetchone()
-        assert client.get('/'+str(post[0])+'/post').status_code == 200
+        vals = cursor.fetchone()
+        keys = ['id', 'author_id', 'created', 'title', 'body']
+        if vals: post = {keys[i]: vals[i] for i in xrange(len(keys))}
+
+        response =  client.get('/'+str(post['id'])+'/post')
+        assert response.status_code == 200
+        assert post['title'] in response.data
+        assert post['body'] in response.data
+
+
 
 @pytest.mark.parametrize('path', (
     '/create',

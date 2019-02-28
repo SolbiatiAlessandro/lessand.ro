@@ -84,7 +84,7 @@ def get_post(id, check_author=True):
     return post
 
 
-@bp.route('/<int:id>/post', methods=('GET', 'POST'))
+@bp.route('/<int:id>/post')
 def post(id):
     post = get_post(id)
     return render_template('blog/post.html', post=post)

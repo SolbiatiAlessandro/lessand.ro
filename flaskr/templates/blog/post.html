@@ -4,7 +4,8 @@
 	<a class="action" href="{{ url_for('blog.index') }}">Back</a>
 {% endblock %}
 
-<div class= "article">
+{% block content %}
+	<div class= "article">
     <h3 class="title">{{ post['title'] }}</h3>
     <div class="about">by {{ post['username'] }} on {{ post['created'].strftime('%Y-%m-%d') }}</div>
         {% if g.user['id'] == post['author_id'] %}
@@ -12,4 +13,5 @@
         {% endif %}
 
     <h4 class="subtitle">{{ post['body'] }}<span class="inside"> read more..</span></h3>
-</div>
+	</div>
+{% endblock %}
