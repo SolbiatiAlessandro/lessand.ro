@@ -12,7 +12,7 @@ quick roadmap:
 - [X] system design
 - [X] deployment on my local machine of the backbone
 - [X] deployment on heroku of the backbone
-- [ ] set up CICD routines
-- [ ] integrate UI/UX on the backbone
-- [ ] clean up the github repo
+- [X] set up CICD routines
+- [X] integrate UI/UX on the backbone
+- [X] clean up the github repo
 - [ ] finish first iteration and start write content
