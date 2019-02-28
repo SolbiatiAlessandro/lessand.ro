@@ -4,4 +4,4 @@ before_script:
 script:
     - pytest
 env:
-    - DATABASE_URL=travis_ci_test 
+    - DATABASE_URL="dbname='travis_ci_test'"
