@@ -5,7 +5,7 @@ from flask.cli import with_appcontext
 import os
 import psycopg2
 
-# $ heroku pg:pull localdb
+# $ heroku pg:pull DATABASE localdb
 # $ export DATABASE_URL="dbname='localdb'"
 
 DATABASE_URL = os.environ['DATABASE_URL']
