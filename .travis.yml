@@ -3,6 +3,7 @@ before_script:
     - psql -c 'create database travis_ci_test;' -U postgres
 script:
     - pytest
+    - codecov
 env:
     - DATABASE_URL="dbname='travis_ci_test'"
     - CODECOV_TOKEN="01c51ec9-ccb1-43d1-a1f6-6a0f877e0442"

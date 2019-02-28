@@ -1,20 +1,25 @@
 atomicwrites==1.3.0
 attrs==18.2.0
+certifi==2018.11.29
+chardet==3.0.4
 Click==7.0
+codecov==2.0.15
 coverage==4.5.2
 Flask==1.0.2
--e git+https://github.com/SolbiatiAlessandro/lessand.ro.git@73370598d7d8fc0e394fae580e832a5a374ea58c#egg=flaskr
+-e git+https://github.com/SolbiatiAlessandro/lessand.ro.git@c7b3c321dbf22c4999742fecb338c61c2a95131b#egg=flaskr
 funcsigs==1.0.2
+idna==2.8
 itsdangerous==1.1.0
 Jinja2==2.10
 MarkupSafe==1.1.0
 more-itertools==5.0.0
 pathlib2==2.3.3
 pluggy==0.8.1
+psycopg2-binary==2.7.7
 py==1.7.0
 pytest==4.2.1
+requests==2.21.0
 scandir==1.9.0
 six==1.12.0
+urllib3==1.24.1
 Werkzeug==0.14.1
-gunicorn==19.5.0
-psycopg2-binary==2.7.7
