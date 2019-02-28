@@ -3,7 +3,7 @@ attrs==18.2.0
 Click==7.0
 coverage==4.5.2
 Flask==1.0.2
--e git+https://github.com/SolbiatiAlessandro/lessand.ro.git@7cbefa48b43aa732d8af01c9a297d190ec8a90b5#egg=flaskr
+-e git+https://github.com/SolbiatiAlessandro/lessand.ro.git@73370598d7d8fc0e394fae580e832a5a374ea58c#egg=flaskr
 funcsigs==1.0.2
 itsdangerous==1.1.0
 Jinja2==2.10
