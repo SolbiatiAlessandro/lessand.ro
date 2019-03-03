@@ -33,3 +33,4 @@ Second Iteration
 - [ ] make base domain without ww
 - [ ] fix on SAFARI there is no sticky and rendered badly 
 - [ ] fix mobile
+- [ ] build/integrate traffic analytics
