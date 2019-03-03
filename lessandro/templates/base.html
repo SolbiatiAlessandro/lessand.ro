@@ -8,14 +8,13 @@
 <body>
 	<div class="personal">
 		<ul style="list-style-type:none;padding:0;width: 70%;margin-left: 15%;">
-			<li class="personal-description">
+			<a href="/"><li class="personal-description">
 				<img class="head" src="{{ url_for('static', filename='head.jpeg') }}">
 				<div style="text-align:left;font-size:12px;">
-				"I love playing jazz, reading Chinese, and occasionaly write some Python."
 				</div>
-			</li>
-			<li class="personal-description">Read about Alessandro</li>
-			<li class="personal-description">or ping him at <b>hello@lessand.ro</b></li>
+			</li></a>
+			<li class="personal-description"><a href='/7/post' class="subtitle" style="text-decoration:none; color: #c6e4c5;" >about Alessandro</a></li>
+			<li class="personal-description"><a href="mailto:hello@lessand.ro" class="subtitle"  style="color: #c6e4c5;">hello@lessand.ro</a></li>
 		</ul>
 		<div class="socialbox">
 			<div class="social">
@@ -33,7 +32,7 @@
 		</div>
 	</div>
 	<div class="blog">
-		<a href="#" class="page-title">lessand.ro</a>
+		<a href="/" class="page-title">lessand.ro</a>
 		  <header>
 			{% block header %}{% endblock %}
 		  </header>

@@ -25,8 +25,8 @@ Second Iteration
 
 - [X] manke jinja render html so I can write html here 
 - [X] fix [Issue #1](https://github.com/SolbiatiAlessandro/lessand.ro/issues/1)
-- [ ] fix styling on the left and also fonts/dimensions/buttons 
-- [ ] write an about page 
+- [X] fix styling on the left and also fonts/dimensions/buttons 
+- [X] write an about page 
 - [X] add social links and add twitter 
 - [ ] make https work 
 - [ ] make base domain without ww
