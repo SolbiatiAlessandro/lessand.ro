@@ -27,6 +27,7 @@ Second Iteration
 - [X] fix [Issue #1](https://github.com/SolbiatiAlessandro/lessand.ro/issues/1)
 - [ ] fix styling on the left and also fonts/dimensions/buttons 
 - [ ] write an about page 
-- [ ] add social links and add twitter 
+- [X] add social links and add twitter 
 - [ ] make https work 
 - [ ] make base domain without ww
+- [X] add email
