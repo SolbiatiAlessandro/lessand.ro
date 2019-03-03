@@ -9,10 +9,10 @@ all this problem arise because my app is not in a single module but is actually 
 
 so inside __init__.py there is a create_app() method that will be called here to get a callable instance of the FLASK app to give to WSGI, you can test that the previous sentence is true if you put yourself in this directory and on the python REPL write 
 
->>> from flaskr import create_app;create_app()
+>>> from lessandro import create_app;create_app()
 <Flask 'flaskr'>
 """
-from flaskr import create_app
+from lessandro import create_app
 
 if __name__ == "__main__":
     # this is to be run as python app.py
