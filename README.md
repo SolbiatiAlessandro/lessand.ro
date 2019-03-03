@@ -23,8 +23,8 @@ First Iteration
 Second Iteration
 ================
 
-- [ ] manke jinja render html so I can write html here 
-- [ ] fix [Issue #1](https://github.com/SolbiatiAlessandro/lessand.ro/issues/1)
+- [X] manke jinja render html so I can write html here 
+- [X] fix [Issue #1](https://github.com/SolbiatiAlessandro/lessand.ro/issues/1)
 - [ ] fix styling on the left and also fonts/dimensions/buttons 
 - [ ] write an about page 
 - [ ] add social links and add twitter 

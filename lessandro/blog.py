@@ -53,7 +53,7 @@ def create():
             db, cursor = get_db()
             cursor.execute(
                 "INSERT INTO post (title, body, created, author_id)"
-                " VALUES ('{}', '{}', '{}','{}' )".format(title, body, ctime(),  g.user['id'])
+                " VALUES (%s, %s, %s, %s)", (title, body, ctime(),  g.user['id'])
             )
             db.commit()
             return redirect(url_for('blog.index'))
