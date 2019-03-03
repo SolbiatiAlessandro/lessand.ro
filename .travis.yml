@@ -2,7 +2,7 @@ language: python
 before_script:
     - psql -c 'create database travis_ci_test;' -U postgres
 script:
-    - pytest --cov=./flaskr
+    - pytest --cov=./lessandro
 env:
     - DATABASE_URL="dbname='travis_ci_test'"
 after_success:
