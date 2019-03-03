@@ -6,11 +6,12 @@ Click==7.0
 codecov==2.0.15
 coverage==4.5.2
 Flask==1.0.2
--e git+https://github.com/SolbiatiAlessandro/lessand.ro.git@11f8d65633bd1f0b1d95b6887db1d4d2a51fa2b9#egg=flaskr
 funcsigs==1.0.2
+gunicorn==19.9.0
 idna==2.8
 itsdangerous==1.1.0
 Jinja2==2.10
+-e git+https://github.com/SolbiatiAlessandro/lessand.ro.git@8d319ad4ae8f5e0ba6cc9740ee0ec3dba096dc58#egg=lessandro
 MarkupSafe==1.1.0
 more-itertools==5.0.0
 pathlib2==2.3.3
