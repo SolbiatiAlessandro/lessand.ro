@@ -28,6 +28,8 @@ Second Iteration
 - [X] fix styling on the left and also fonts/dimensions/buttons 
 - [X] write an about page 
 - [X] add social links and add twitter 
+- [X] add email
 - [ ] make https work 
 - [ ] make base domain without ww
-- [X] add email
+- [ ] fix on SAFARI there is no sticky and rendered badly 
+- [ ] fix mobile
