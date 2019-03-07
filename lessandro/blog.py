@@ -29,6 +29,14 @@ def index():
     posts = []
     for post_values in posts_values:
         post = {keys[i]: post_values[i] for i in range(len(keys))}
+
+        # I am inserting in the body of the article the numeric value
+        # of hash('more') to signal the stop of the preview and put
+        # the readmore button
+        more_index = post['body'].find(str(hash('more')))
+        if more_index != -1:
+            post['body'] = post['body'][:more_index] 
+
         posts.append(post)
 
     # the dictionary is needed for jinja2 to render template
@@ -87,6 +95,10 @@ def get_post(id, check_author=True):
 @bp.route('/<int:id>/post')
 def post(id):
     post = get_post(id, check_author=False)
+
+    # this erases the hash("more") from the post
+    post['body'] =  post['body'].replace(str(hash("more")), "")
+
     return render_template('blog/post.html', post=post)
 
 
@@ -108,8 +120,8 @@ def update(id):
         else:
             db, cursor = get_db()
             cursor.execute(
-                "UPDATE post SET title = '{}', body = '{}'"
-                " WHERE id = '{}'".format(title, body, id)
+                "UPDATE post SET title = %s, body = %s"
+                " WHERE id = %s", (title, body, id)
             )
             db.commit()
             return redirect(url_for('blog.index'))

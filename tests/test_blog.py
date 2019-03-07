@@ -15,6 +15,9 @@ def test_index(client, auth):
     assert b'by test on 2018-01-01' in response.data
     assert b'test body' in response.data
     assert b'href="/1/update"' in response.data
+    assert str(hash("more")) not in response.data
+    assert b'see this X' in response.data
+    assert b'not see this Y' not in response.data
 
 @pytest.mark.parametrize('path', (
     '/create',
@@ -110,6 +113,24 @@ def test_update(client, auth, app):
         else: post = None
         assert post['title'] == 'updated'
 
+def test_update_special_char(client, auth, app):
+    auth.login()
+    assert client.get('/1/update').status_code == 200
+    client.post('/1/update', data={'title': "updated special ' ( ) : x + %", 'body': ''})
+
+    with app.app_context():
+        db, cursor = get_db()
+        cursor.execute(
+                'SELECT * FROM post WHERE id = 1'
+                )
+        vals = cursor.fetchone()
+        keys = ['id', 'author_id', 'created', 'title', 'body']
+        assert len(vals) == len(keys)
+
+        if vals: post = {keys[i]: vals[i] for i in xrange(len(keys))}
+        else: post = None
+        assert post['title'] == "updated special ' ( ) : x + %"
+
 def test_post(client, auth, app):
     # test without login
     with app.app_context():
@@ -135,7 +156,8 @@ def test_post(client, auth, app):
         response =  client.get('/'+str(post['id'])+'/post')
         assert response.status_code == 200
         assert post['title'] in response.data
-        assert post['body'] in response.data
+        assert post['body'].replace(str(hash("more")), "") in response.data
+        assert str(hash("more")) not in response.data
 
 
 
