@@ -33,7 +33,7 @@ def index():
         # I am inserting in the body of the article the numeric value
         # of hash('more') to signal the stop of the preview and put
         # the readmore button
-        more_index = post['body'].find(str(hash('more')))
+        more_index = post['body'].find(str(-8321014616845971137))
         if more_index != -1:
             post['body'] = post['body'][:more_index] 
 
@@ -97,7 +97,7 @@ def post(id):
     post = get_post(id, check_author=False)
 
     # this erases the hash("more") from the post
-    post['body'] =  post['body'].replace(str(hash("more")), "")
+    post['body'] =  post['body'].replace(str(-8321014616845971137), "")
 
     return render_template('blog/post.html', post=post)
 
