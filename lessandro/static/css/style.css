@@ -1,18 +1,38 @@
+.fab:hover {
+  opacity: 0.7;
+}
+a:hover{
+	opacity:0.7;
+}
+.social-ul{
+	white-space:nowrap;
+	margin-top:0px !important;
+	font-size:20px !important;
+}
+.social-li{
+	display:inline-block !important;
+}
+.left-box{
+	box-shadow:0px 0px 10px #213b27;
+	background: #276b36;
+	padding: 10px;
+	margin-top:15px;
+}
 body {
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
-  color: #4d4d4d;
+	background-color: #135321;
+  color: #5cbb47;
   font-family: 'PT Sans', sans-serif;
   font-size: 18px;
 }
 a {
-  color: #000000;
+  color: #b5eab2;
   text-decoration: none;
 }
 hr {
   color: #eeeeee;
-  background-color: #eeeeee;
+  background-color: #135321;
   height: 1px;
   border: none;
 }
@@ -47,16 +67,17 @@ aside div#user_meta ul li {
 }
 aside div#user_meta ul li a {
   padding: 5px 15px 5px 15px;
-  border: 3px solid #eeeeee;
+  border: 2px solid ##276b36;
   border-radius: 15px;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
-  color: #999999;
+}
+main {
+  background-color: #276b36
 }
 main header {
-  padding: 40px;
-  border-top: #eeeeee 1px solid;
-  border-bottom: #eeeeee 1px solid;
+  padding: 30px;
+  text-align: right;
 }
 main header p {
   font-weight: bold;
@@ -146,8 +167,7 @@ main div#ending_message {
     margin: 10px 0 0 0;
   }
   aside div#user_meta {
-    max-width: 192px;
-    text-align: right;
+    text-align: left;
   }
   aside div#user_meta ul li {
     display: block;
@@ -166,4 +186,10 @@ main div#ending_message {
   main header {
     border-top: 0;
   }
+
+}
+.page-title {
+	font-size: 40px;
+	border-bottom: 3px solid #3cb146;
+	margin-right: 30px;
 }
