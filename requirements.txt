@@ -10,8 +10,9 @@ funcsigs==1.0.2
 gunicorn==19.9.0
 idna==2.8
 itsdangerous==1.1.0
-Jinja2==2.10
--e git+https://github.com/SolbiatiAlessandro/lessand.ro.git@8d319ad4ae8f5e0ba6cc9740ee0ec3dba096dc58#egg=lessandro
+Jinja==1.2
+Jinja2==2.10.1
+-e git+https://github.com/SolbiatiAlessandro/lessand.ro.git@49d490e82518a5d40c17ba07e802cc8c01fa3b1e#egg=lessandro
 MarkupSafe==1.1.0
 more-itertools==5.0.0
 pathlib2==2.3.3
