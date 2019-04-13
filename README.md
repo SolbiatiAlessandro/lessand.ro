@@ -41,10 +41,12 @@ Second Iteration
 - [X] add social links and add twitter 
 - [X] add email
 - [ ] make https work 
-- [ ] make base domain without ww
-- [ ] fix on SAFARI there is no sticky and rendered badly 
-- [ ] fix mobile
+- [ ] make base domain without www
+- [X] fix on SAFARI there is no sticky and rendered badly 
+- [X] fix mobile version
 - [x] figure out how to manage images for blog posts (ugly)
-- [ ] **build/integrate traffic analytics**
+- [ ] **build/integrate Google analytics**
 - [x] set up template from https://github.com/gfidente/pelican-svbhack
+- [ ] add meta-descriptions and title to articles
+
 
