@@ -47,3 +47,5 @@ Second Iteration
 - [x] figure out how to manage images for blog posts (ugly)
 - [ ] **build/integrate traffic analytics**
 - [ ] set up template from https://github.com/gfidente/pelican-svbhack
+## this is the branch to set up template, delete this when merged ##
+
