@@ -12,7 +12,6 @@ def test_index(client, auth):
     response = client.get('/')
     #assert b'Log Out' in response.data
     assert b'test title' in response.data
-    assert b'by test on 2018-01-01' in response.data
     assert b'test body' in response.data
     assert b'href="/1/update"' in response.data
     assert str(hash("more")) not in response.data
@@ -42,8 +41,6 @@ def test_author_required(app, client, auth):
     # current user can't modify other user's post
     assert client.post('/1/update').status_code == 403
     assert client.post('/1/delete').status_code == 403
-    # current user doesn't see edit link
-    assert b'href="/1/update"' not in client.get('/').data
 
 
 @pytest.mark.parametrize('path', (
