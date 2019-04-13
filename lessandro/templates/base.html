@@ -2,44 +2,53 @@
 <html>
 <head>
   <title>lessand.ro</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=PT+Sans|PT+Serif|PT+Mono">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Alessandro Solbiati">
+  <meta name="description" content="Posts and writings by Alessandro Solbiati">
+
 </head>
 <body>
-	<div class="personal">
-		<ul style="list-style-type:none;padding:0;width: 70%;margin-left: 15%;">
-			<a href="/"><li class="personal-description">
-				<img class="head" src="{{ url_for('static', filename='head.jpeg') }}">
-				<div style="text-align:left;font-size:12px;">
-				</div>
-			</li></a>
-			<li class="personal-description"><a href='/7/post' class="subtitle" style="text-decoration:none; color: #c6e4c5;" >about Alessandro</a></li>
-			<li class="personal-description"><a href="mailto:hello@lessand.ro" class="subtitle"  style="color: #c6e4c5;">hello@lessand.ro</a></li>
-		</ul>
-		<div class="socialbox">
-			<div class="social">
-				<a href="https://twitter.com/lessand_ro" class="fab fa-twitter"></a>
-				<a href="https://www.kaggle.com/alessandrosolbiati" class="fab fa-kaggle"></a>
-				<a href="https://stackoverflow.com/users/7067655/alessandro-solbiati" class="fab fa-stack-overflow"></a>
-				<a href="https://www.quora.com/profile/Alessandro-Solbiati" class="fab fa-quora"></a>
-			</div>
-			<div class="social">
-				<a href="https://www.linkedin.com/in/solbiatialessandro/" class="fab fa-linkedin"></a>
-				<a href="https://github.com/SolbiatiAlessandro" class="fab fa-github"></a>
-				<a href="https://www.facebook.com/alessandro.solbiati.7" class="fab fa-facebook"></a>
-				<a href="https://www.youtube.com/channel/UC10ci77Vw3J0ukYsczYti8w" class="fab fa-youtube"></a>
-			</div>
+	<aside>
+		<div id="user_meta">
+			<a href="/">
+				<img src="{{ url_for('static', filename='head.jpeg') }}" alt="logo">
+			</a>
+			<h2><a href='/7/post' class="subtitle" style="text-decoration:none; color: #c6e4c5;" >about Alessandro</a></h2>
+			<h2><a href="mailto:hello@lessand.ro" class="subtitle"  style="color: #c6e4c5;">hello@lessand.ro</a></h2>
+			<ul>
+				<li><a href="https://twitter.com/lessand_ro" class="fab fa-twitter"></a></li>
+				<li><a href="https://www.kaggle.com/alessandrosolbiati" class="fab fa-kaggle"></a></li>
+				<li><a href="https://stackoverflow.com/users/7067655/alessandro-solbiati" class="fab fa-stack-overflow"></a></li>
+				<li><a href="https://www.quora.com/profile/Alessandro-Solbiati" class="fab fa-quora"></a></li>
+				<li><a href="https://www.linkedin.com/in/solbiatialessandro/" class="fab fa-linkedin"></a></li>
+				<li><a href="https://github.com/SolbiatiAlessandro" class="fab fa-github"></a></li>
+				<li><a href="https://www.facebook.com/alessandro.solbiati.7" class="fab fa-facebook"></a></li>
+				<li><a href="https://www.youtube.com/channel/UC10ci77Vw3J0ukYsczYti8w" class="fab fa-youtube"></a></li>
+			</ul>
 		</div>
-	</div>
-	<div class="blog">
-		<a href="/" class="page-title">lessand.ro</a>
-		  <header>
+	</aside>
+
+	<main>
+		<header>
+			<a href="/" class="page-title">lessand.ro</a>
 			{% block header %}{% endblock %}
-		  </header>
-		  {% for message in get_flashed_messages() %}
+		</header>
+
+	    {% for message in get_flashed_messages() %}
 			<div class="flash">{{ message }}</div>
-		  {% endfor %}
-		  {% block content %}{% endblock %}
-	</div>
-</body>
+	    {% endfor %}
+	    {% block content %}{% endblock %}
+		{% block footer %}
+		{% endblock %}
+		<div id="ending_message">
+			<p>&copy; Alessandro Solbiati. Built using <a href="https://www.python.org/" target="_blank">Python 2.7</a> and <a href="http://flask.pocoo.org/">Flask</a>. Theme adapted from Giulio Fidente on <a href="https://github.com/gfidente/pelican-svbhack" target="_blank">github</a>.
+			</p>
+		</div>
+	  </main>
+	</body>
 </html>
