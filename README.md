@@ -17,6 +17,11 @@ To run locally the app (you need to have credentials)
 heroku local web
 ```
 
+To deploy to heroku
+```
+git push heroku master
+```
+
 You should also export a local variable with the location of the local PostrgreSQL database with the following syntax
 ```
 export DATABASE_URL="dbname='localdb'"
