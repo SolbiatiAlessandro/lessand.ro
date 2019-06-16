@@ -12,6 +12,11 @@ pytest tests --cov=./ --cov-report html
 open htmlcov/index.html
 ```
 
+To run locally the app (you need to have credentials)
+```
+heroku local web
+```
+
 You should also export a local variable with the location of the local PostrgreSQL database with the following syntax
 ```
 export DATABASE_URL="dbname='localdb'"
@@ -48,5 +53,6 @@ Second Iteration
 - [ ] **build/integrate Google analytics**
 - [x] set up template from https://github.com/gfidente/pelican-svbhack
 - [ ] add meta-descriptions and title to articles
+- [x] improve writing interface
 
 
