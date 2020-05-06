@@ -1,6 +1,8 @@
 language: python
 services:
   - postgresql
+python:
+  - "2.7"
 before_script:
     - psql -c 'create database travis_ci_test;' -U postgres
 script:
